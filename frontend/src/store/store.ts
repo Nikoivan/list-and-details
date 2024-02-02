@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { detailsReducer } from './redux/slices/detailsSlice';
+import { targetReducer } from './redux/slices/targetSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import saga from './redux/sagas/saga';
@@ -8,6 +9,7 @@ import saga from './redux/sagas/saga';
 const sagaMiddleware = createSagaMiddleware();
 const rootReducer = combineReducers({
   details: detailsReducer,
+  target: targetReducer,
 });
 
 export const store = configureStore({

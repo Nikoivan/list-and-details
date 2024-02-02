@@ -1,7 +1,7 @@
 import { getBaseUrl } from './url.client';
 
-const detailsAPIRequest = async (id: string) => {
-  const url = `${getBaseUrl()}/api/services/${id}`;
+const detailsAPIRequest = async (id?: string) => {
+  const url = id ? `${getBaseUrl()}/api/services/${id}` : `${getBaseUrl()}/api/services`;
 
   const response = await fetch(url);
 
@@ -10,7 +10,7 @@ const detailsAPIRequest = async (id: string) => {
   }
 
   const test = await response.json();
-  console.log(test);
+
   return test;
 };
 

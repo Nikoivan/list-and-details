@@ -1,13 +1,19 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Details from './components/Details/Details';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+
+import Details from './components/Details/Details';
+import DetailsFullItem from './components/Details/FullItem/Details-FullItem';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/:id/details',
+      path: '/',
       element: <Details />,
+    },
+    {
+      path: ':id/details',
+      element: <DetailsFullItem />,
     },
     {
       path: '*',
