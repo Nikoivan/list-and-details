@@ -71,8 +71,6 @@ app.get('/api/services', (req, res) => {
 app.get('/api/services/:id', (req, res) => {
   const id = Number(req.params.id);
   const index = services.findIndex((o) => o.id === id);
-  console.log('req - ' + req.params);
-  console.log('index - ' + index);
   if (index === -1) {
     const status = 404;
     return fortune(res, null, status).catch(() => res.status(500).send('Something went wrong'));

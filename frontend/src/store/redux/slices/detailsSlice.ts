@@ -30,6 +30,8 @@ export const detailsSlice = createSlice({
   reducers: {
     detailsRequest: (state) => {
       state.loading = true;
+      state.data = [];
+      state.error = null;
     },
     detailsSuccess: (state, action: SuccessDetailsAction) => {
       state.loading = false;

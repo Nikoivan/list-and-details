@@ -29,6 +29,8 @@ export const targetSlice = createSlice({
     targetRequest: (state, action: RequestTargetAction) => {
       state.query = action.payload;
       state.loading = true;
+      state.data = null;
+      state.error = null;
     },
     targetSuccess: (state, action: SuccessTargetAction) => {
       state.loading = false;
